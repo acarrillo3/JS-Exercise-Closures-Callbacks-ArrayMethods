@@ -89,8 +89,13 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
+function processSum(numberList, callback) {
   /* CODE HERE */
+  var totalSum = 0;
+  numberList.forEach(function(currentNumber){
+    totalSum = totalSum + currentNumber;
+  })
+  return callback(totalSum);
 }
 
 /**
@@ -111,8 +116,9 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
   /* CODE HERE */
+  return callback(num1 * num2);
 }
 
 /**
@@ -135,8 +141,9 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
+function processContains(item, list, callback) {
   /* CODE HERE */
+  return list.includes(item) ? callback(true) : callback(false);
 }
 
 /**
@@ -180,8 +187,11 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(arreyRun) {
   /* CODE HERE */
+  let runnerByFullName = [];
+  arreyRun.forEach(runner => runnerByFullName.push(`${runner.last_name}, ${runner.first_name}`))
+  return runnerByFullName;
 }
 
 /**
@@ -196,8 +206,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(runners) {
   /* CODE HERE */
+  var names = [];
+  runners.forEach(runner => names.push(runner.first_name.toUpperCase()));
+  return names;
 }
 
 /**
